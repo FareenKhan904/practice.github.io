@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    background-image: url(./images/guillaume-briard-lSXpV8bDeMA-unsplash.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+
+    background-size: cover;
+    /* top: 0px;
+   position: fixed;
+   z-index: -1;
+   
+    background-position: center; */
+}
+
+
+.navbar{
+    background-color: pink;
+}
+
+.logo i{
+    color: rgb(11, 162, 11);
+    font-size: 50PX;
+    /* background-color: green; */
+}
+
+.lists ul li{
+    font-size: 18px;
+}
+
+.sec1-details{
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 100px;
+}
+
+
+
+.boxes{
+    display: flex;
+    flex-direction:row;
+}
+
+.box-2{
+    padding-left: 20px;
+}
+
+.left{
+    width: 60%;
+    }
+
+    .left img{
+        height: 70%; 
+        max-width: 500px;
+    }
+
+    /* media query of section1 */
+@media (max-width: 1200px){
+    .right{
+        width: 40%;
+    }
+}
+
+
+@media (max-width: 990px){
+    .boxes{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .box-2{
+        padding: 0;
+    }
+}
+
+@media (max-width: 780px){
+    .sec1-details{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .right{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 30px;
+    }
+
+    .left img{
+        width: 300px;
+    }
+}
+
+/* media query for section2 */
+@media (max-width: 1580px){
+    .rows{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 30px;
+    }
+}
+
+/* media query for footer */
+@media (max-width: 800px){
+.footer-img img{
+    width: 100px;
+}
+
+
+}
+@media (max-width: 605px){
+    body{
+padding-left: 0 20px;
+    }
+}
+
+.last-btn{
+    /* background-color: white; */
+    position: fixed;
+right:20px;
+bottom: 10px;
+}
+
+/* #last-btn[title]{
+    color: red;
+} */
+
+#question-icon{
+    /* font-weight: bold; */
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+  
+}
+
+#toastt{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+}
+
+.btn-close:hover{
+animation: btn .5s;
+}
+
+@keyframes btn{
+  from{
+    transform: rotate(0);
+  }
+
+  to{
+    transform: rotate(-45deg);
+  }
+}
+
+.fade-in-element {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+

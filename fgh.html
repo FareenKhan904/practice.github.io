@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fade-in-element {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    #content {
+      padding-top: 80px; /* Adjust this value based on your navbar height */
+    }
+  </style>
+</head>
+<body>
+
+<div id="navbar">
+  Navbar
+</div>
+
+<div id="content">
+  <div class="fade-in-element">
+    <h2>Element 1</h2>
+    <p>Your content goes here...</p>
+  </div>
+
+  <div class="fade-in-element">
+    <h2>Element 2</h2>
+    <p>Your content goes here...</p>
+  </div>
+
+  <div class="fade-in-element">
+    <h2>Element 3</h2>
+    <p>Your content goes here...</p>
+  </div>
+</div>
+
+<script>
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= windowHeight
+    );
+  }
+
+  function handleScroll() {
+    const fadeElements = document.querySelectorAll('.fade-in-element');
+
+    fadeElements.forEach((element) => {
+      if (isInViewport(element)) {
+        element.style.opacity = 1;
+      }
+    });
+  }
+
+  window.onscroll = handleScroll;
+  handleScroll(); // Initial check on page load
+</script>
+
+</body>
+</html>
